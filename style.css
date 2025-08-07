@@ -1,0 +1,222 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+:root {
+  /* Neutral */
+  --Neutral-900: hsl(227, 75%, 14%);
+  --Neutral-800: hsl(226, 25%, 17%);
+  --Neutral-700: hsl(225, 23%, 24%);
+  --Neutral-600: hsl(226, 11%, 37%);
+  --Neutral-300: hsl(0, 0%, 78%);
+  --Neutral-200: hsl(217, 61%, 90%);
+  --Neutral-100: hsl(0, 0%, 93%);
+  --Neutral-0: #fbfdfe;
+
+  /* Red */
+  --Red-400: hsl(3, 86%, 64%);
+  --Red-500: hsl(3, 71%, 56%);
+  --Red-700: hsl(3, 77%, 44%);
+
+  /* Gradient */
+  --shadow: rgba(0, 0, 0, 0.102);
+  --Light-Gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --Gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+
+  /* button */
+  --btn: 30px;
+}
+.lightMode {
+  --Neutral-900: #fbfdfe; 
+  --Neutral-800: #fbfdfe; 
+  /* --Neutral-800: hsl(0, 0%, 93%); */
+  --Neutral-700: hsl(217, 61%, 90%);
+  --Neutral-600: hsl(0, 0%, 78%);
+
+  --Neutral-300: hsl(226, 11%, 37%);
+  --Neutral-200: hsl(225, 23%, 24%);
+  --Neutral-100: hsl(226, 25%, 17%);
+  --Neutral-0: hsl(227, 75%, 14%);
+  
+  --Gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 1em;
+  font-family: "Noto Sans";
+  background: var(--Gradient);
+  color: var(--Neutral-100);
+}
+a {
+  text-decoration: none;
+}
+main {
+  margin: 40px 60px;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--Neutral-800);
+  border-radius: 10px;
+  padding: 7px;
+  box-shadow: 0px 1px 3px var(--shadow);
+}
+.nav .logoIcon {
+  margin-right: auto;
+}
+.logoExtension {
+  fill: var(--Neutral-0);
+}
+.icon {
+  display: flex;
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid var(--Neutral-700);
+  background: var(--Neutral-600);
+  cursor: pointer;
+  box-shadow: 0px 1px 3px var(--shadow);
+}
+.icon svg {
+  fill: white;
+}
+.icon:hover {
+  border: 2px solid var(--Red-700);
+}
+.icon svg:last-child{
+  display: none;
+  fill: #09153e;
+}
+
+/* SWITCHING MODE  */
+.lightmode .icon svg:first-child{
+  display: none;
+}
+.lightmode .icon svg:last-child{
+  display: block;
+}
+
+
+.secondNavbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0 20px;
+}
+.secondNavbar p {
+  margin-right: auto;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: var(--Neutral-0);
+}
+.secondNavbar a {
+  padding: 8px 18px;
+  margin-right: 10px;
+  border-radius: var(--btn);
+  background: var(--Neutral-800);
+  border: 1px solid var(--Neutral-600);
+  color: var(--Neutral-300);
+  transition: border 0.3s ease-in, color 0.3s ease-in;
+}
+.secondNavbar a:hover {
+    border: 1px solid var(--Red-500);
+}.secondNavbar a:active {
+    background: var(--Red-500);
+}
+.extensions {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+}
+.card {
+  padding: 15px;
+  background: var(--Neutral-800);
+  border: 1px solid var(--Neutral-600);
+  border-radius: 20px;
+  box-shadow: 0px 1px 3px var(--shadow);
+}
+.cardflex {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 10px;
+}
+.para {
+  color: var(--Neutral-0);
+  margin: 5px 0;
+  font-weight: 900;
+}
+div p {
+  color: var(--Neutral-300);
+  font-weight: 300;
+  font: 0.8em;
+}
+.btnCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.remove {
+  color: var(--Neutral-0);
+  padding: 8px 18px;
+  border: 1px solid var(--Neutral-600);
+  border-radius: var(--btn);
+  background: transparent;
+  transition: border 0.3s ease-in;
+}
+.remove:hover {
+  border: 1px solid var(--Red-500);
+}
+.remove:active{
+  background: var(--Red-500);
+}
+.switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 19px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slid {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--Neutral-600);
+  transition: 0.5s;
+  border-radius: 30px;
+}
+.slid:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  top: 2px;
+  left: 4px;
+  bottom: 4px;
+  background: white;
+  transition: 0.5s;
+  border-radius: 50%;
+}
+input:checked + .slid {
+  background: var(--Red-500);
+}
+input:checked + .slid:before {
+  transform: translateX(12px);
+}
