@@ -231,9 +231,9 @@ input:checked + .slid:before {
     text-align: center;
     margin-right: 0;
   }
-.extensions {
-  display: grid;
-  grid-template-columns: auto;
-  gap: 10px;
-}
+  .extensions {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
+  }
 }
