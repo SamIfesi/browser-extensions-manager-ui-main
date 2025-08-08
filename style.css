@@ -30,8 +30,8 @@
   --btn: 30px;
 }
 .lightMode {
-  --Neutral-900: #fbfdfe; 
-  --Neutral-800: #fbfdfe; 
+  --Neutral-900: #fbfdfe;
+  --Neutral-800: #fbfdfe;
   /* --Neutral-800: hsl(0, 0%, 93%); */
   --Neutral-700: hsl(217, 61%, 90%);
   --Neutral-600: hsl(0, 0%, 78%);
@@ -40,7 +40,7 @@
   --Neutral-200: hsl(225, 23%, 24%);
   --Neutral-100: hsl(226, 25%, 17%);
   --Neutral-0: hsl(227, 75%, 14%);
-  
+
   --Gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
 }
 * {
@@ -78,31 +78,28 @@ main {
 .icon {
   display: flex;
   padding: 7px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid var(--Neutral-700);
-  background: var(--Neutral-600);
+  background: var(--Neutral-700);
   cursor: pointer;
   box-shadow: 0px 1px 3px var(--shadow);
-}
-.icon svg {
-  fill: white;
+  transition: border 0.3s ease;
 }
 .icon:hover {
-  border: 2px solid var(--Red-700);
+  border: 1px solid var(--Red-700);
 }
-.icon svg:last-child{
+.icon svg:last-child {
   display: none;
-  fill: #09153e;
 }
 
 /* SWITCHING MODE  */
-.lightmode .icon svg:first-child{
+.lightMode .icon svg:first-child {
   display: none;
 }
-.lightmode .icon svg:last-child{
-  display: block;
+.lightMode .icon svg:last-child {
+  display: flex;
+  fill: #09153e;
 }
-
 
 .secondNavbar {
   display: flex;
@@ -126,9 +123,10 @@ main {
   transition: border 0.3s ease-in, color 0.3s ease-in;
 }
 .secondNavbar a:hover {
-    border: 1px solid var(--Red-500);
-}.secondNavbar a:active {
-    background: var(--Red-500);
+  border: 1px solid var(--Red-500);
+}
+.secondNavbar a:active {
+  background: var(--Red-500);
 }
 .extensions {
   display: grid;
@@ -175,7 +173,7 @@ div p {
 .remove:hover {
   border: 1px solid var(--Red-500);
 }
-.remove:active{
+.remove:active {
   background: var(--Red-500);
 }
 .switch {
@@ -208,7 +206,7 @@ div p {
   height: 15px;
   width: 15px;
   top: 2px;
-  left: 4px;
+  left: 3px;
   bottom: 4px;
   background: white;
   transition: 0.5s;
@@ -218,5 +216,24 @@ input:checked + .slid {
   background: var(--Red-500);
 }
 input:checked + .slid:before {
-  transform: translateX(12px);
+  transform: translateX(14px);
+}
+
+@media (max-width: 375px) {
+  main {
+    margin: 20px 15px;
+  }
+  .secondNavbar {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .secondNavbar p {
+    text-align: center;
+    margin-right: 0;
+  }
+.extensions {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 10px;
+}
 }
