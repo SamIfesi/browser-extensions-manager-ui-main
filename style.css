@@ -219,6 +219,34 @@ input:checked + .slid:before {
   transform: translateX(14px);
 }
 
+@media (max-width: 900px) {
+  main {
+    margin: 20px 15px;
+  }
+  .extensions {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+  }
+}
+@media (max-width: 480px) {
+  main {
+    margin: 20px 15px;
+  }
+  .secondNavbar {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .secondNavbar p {
+    text-align: center;
+    margin-right: 0;
+  }
+  .extensions {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
+  }
+}
 @media (max-width: 375px) {
   main {
     margin: 20px 15px;
